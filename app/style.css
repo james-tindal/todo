@@ -1,0 +1,28 @@
+
+body {
+  display: grid;
+  justify-content: center;
+}
+main {
+  width: 475px;
+}
+
+button.toggleAll {
+  width: 40px;
+}
+input.addItem {
+  width: calc(100% - 40px)
+}
+.item {
+  display: flex;
+
+  input[type='checkbox'] {
+    width: 40px;
+  }
+  .text {
+    width: calc(100% - 40px - 40px)
+  }
+  .delete {
+    width: 40px;
+  }
+}
