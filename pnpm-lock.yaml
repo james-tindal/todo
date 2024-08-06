@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  next@14.2.5:
+    hash: 7wu7ykuugc3nprldu6xxoh2wnu
+    path: patches/next@14.2.5.patch
+
 importers:
 
   .:
@@ -13,7 +18,7 @@ importers:
         version: 8.57.0
       next:
         specifier: 14.2.5
-        version: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 14.2.5(patch_hash=7wu7ykuugc3nprldu6xxoh2wnu)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18
         version: 18.3.1
@@ -2397,7 +2402,7 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  next@14.2.5(patch_hash=7wu7ykuugc3nprldu6xxoh2wnu)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@next/env': 14.2.5
       '@swc/helpers': 0.5.5
