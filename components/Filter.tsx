@@ -1,4 +1,6 @@
-import { StateBox, useStateBox } from "@/misc/useStateBox"
+import { Items } from "@/misc/items"
+import { StateBox } from "@/misc/useStateBox"
+import { useState } from "react"
 
 
 export type FilterState = 'All' | 'Active' | 'Completed'
@@ -7,8 +9,17 @@ interface Props {
   state: StateBox<FilterState>
 }
 
-export const useFilterState = () =>
-  useStateBox<FilterState>('All')
+export function useFilterState(items: Items) {
+  const [ state, setState ] = useState<FilterState>('All')
+  return {
+    get value() { return state },
+    set value(x) { setState(x) },
+    items:
+      state == 'All'       ? items :
+      state == 'Active'    ? items.active() :
+      state == 'Completed' ? items.completed() : null as never
+  }
+}
 
 export const Filter = ({ state }: Props) => <>
   <Button label='All' state={state} />
@@ -28,7 +39,6 @@ const Button = ({ label, state }: ButtonProps) =>
   >
     {label}
   </button>
-
 
 // Conditionally add empty attribute to element
 const setIf = (condition: boolean) =>
