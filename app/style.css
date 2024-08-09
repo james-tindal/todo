@@ -10,6 +10,9 @@ main {
 button.toggleAll {
   width: 40px;
 }
+button.toggleAll:not(:has(~ .item)) {
+  visibility: hidden;
+}
 input.addItem {
   width: calc(100% - 40px)
 }
