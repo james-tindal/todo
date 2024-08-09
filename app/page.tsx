@@ -66,8 +66,8 @@ export default function Home() {
       </For>
     
       <Show if={items.size}>
-        <div>
-          <div>{items.active().size} items left</div>
+        <div className="bottom-row">
+          <div className="items-left">{items.active().size} item{items.active().size == 1 ? '' : 's'} left</div>
           <Filter state={filterState} />
           <button onClick={items.clearCompleted}>Clear completed</button>
         </div>

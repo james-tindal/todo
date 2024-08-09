@@ -21,11 +21,12 @@ export function useFilterState(items: Items) {
   }
 }
 
-export const Filter = ({ state }: Props) => <>
-  <Button label='All' state={state} />
-  <Button label='Active' state={state} />
-  <Button label='Completed' state={state} />
-</>
+export const Filter = ({ state }: Props) =>
+  <div className="filter">
+    <Button label='All' state={state} />
+    <Button label='Active' state={state} />
+    <Button label='Completed' state={state} />
+  </div>
 
 interface ButtonProps {
   label: FilterState
@@ -33,7 +34,6 @@ interface ButtonProps {
 }
 const Button = ({ label, state }: ButtonProps) =>
   <button
-    className='filter'
     data-active={setIf(state.value == label)}
     onClick={() => state.value = label}
   >

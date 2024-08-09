@@ -16,7 +16,7 @@ button.toggleAll:not(:has(~ .item)) {
 input.addItem {
   width: calc(100% - 40px)
 }
-.item {
+div.item {
   display: flex;
 
   input[type='checkbox'] {
@@ -27,5 +27,20 @@ input.addItem {
   }
   .delete {
     width: 40px;
+  }
+}
+
+div.bottom-row {
+  display: grid;
+  grid-template-columns: 1.2fr 3fr 1.2fr;
+}
+.items-left { line-height: 140% }
+div.filter {
+  justify-self: center;
+  button { padding: 1px }
+  button[data-active] {
+    border: blueviolet solid 1px;
+    border-radius: 3px;
+    padding: 2px;
   }
 }
